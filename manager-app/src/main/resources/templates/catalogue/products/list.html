@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of products</title>
+</head>
+<body>
+
+<a data-th-href="@{/catalogue/products/create}">Create new product</a>
+
+<h1>List of products</h1>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Product</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="product : ${products}">
+        <td data-th-text="${product.id()}" data-th="#">1</td>
+        <td data-th="Product">
+            <a data-th-href="@{/catalogue/products/{productId}(productId=${product.id()})}"
+               data-th-text="${product.title()}">Product Name</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

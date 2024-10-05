@@ -1,0 +1,7 @@
+server:
+  port: 8084
+sandbox:
+  services:
+    catalogue:
+      uri: http://localhost:8081
+
